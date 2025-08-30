@@ -55,7 +55,8 @@ let box = function (boxClick) {
 };
 
 boxBtns.forEach((boxBtn, i) => {
-  boxBtn.addEventListener("click", () => {
+  boxBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // Prevent event from bubbling up
     box(i);
   });
 });
@@ -65,6 +66,24 @@ boxCloses.forEach((boxClose) => {
     boxViews.forEach((boxView) => {
       boxView.classList.remove("active-box");
     });
+  });
+});
+
+// Close services box when clicking outside
+document.addEventListener("click", function(event) {
+  // Get all active boxes
+  const activeBoxes = document.querySelectorAll(".services-box.active-box");
+  
+  // If no active boxes, do nothing
+  if (activeBoxes.length === 0) return;
+  
+  // Check each active box
+  activeBoxes.forEach(activeBox => {
+    // If click is outside the box content and not on a button, close it
+    if (!activeBox.contains(event.target) || 
+        (event.target.closest(".services-box") && !event.target.closest(".services-box-content"))) {
+      activeBox.classList.remove("active-box");
+    }
   });
 });
 
