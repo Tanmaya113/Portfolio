@@ -70,6 +70,7 @@ const SKILLS = {
 };
 
 const EXPERIENCE = [
+  { hash: "3e92b1f", date: "2025-12 → 2026-01", title: "AI & Full Stack Development Intern", org: "CaveBeats Technologies", branch: "work" },
   { hash: "a1e4c02", date: "2025-06 → 2025-08", title: "Web Developer & Technical Assistant", org: "Devsamagri (Remote)", branch: "work" },
   { hash: "f9b2310", date: "2023 → 2027", title: "B.Tech, Information Technology", org: "Manipal University Jaipur", branch: "education" },
   { hash: "7d40e88", date: "2025 → ongoing", title: "Machine Learning", org: "Udemy", branch: "education" },
